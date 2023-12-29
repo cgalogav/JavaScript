@@ -1,0 +1,70 @@
+<DOCTYPE html>
+<html lang = 'en-uk'>
+	<head>
+		<meta charset = 'utf-8'>
+		<title>multiSelect.html</title>
+		<script type = 'text/javascript'>
+			
+			function showChoices(){
+				var selLanguage = document.getElementById('selLanguage');
+		
+				var result = '<h2>Your languages<\/h2>';
+				result += '<ul> \n';
+		
+				for (i = 0; i<selLanguage.length; i++){
+				
+					currentOption = selLanguage[i];
+					
+					if (currentOption.selected == true){
+						result += '<li>' + currentOption.value + '<\/li> \n';
+					}			
+				}
+				result += '<\/ul> \n';
+				var output = document.getElementById('output');
+				output.innerHTML = result;
+			}
+		
+		
+		</script>
+		<style>
+			.make{
+				margin-left: auto;
+				marin-right: auto;
+				width: 30%;
+				float: left;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<h1>Multiple Selection</h1>
+		<form action = ''>
+			<fieldset>
+				<label class = 'make'>
+					Select the language(s) you know.
+					(ctrl + click to select multiple lines)
+				</label>
+				<select id = selLanguage
+						multiple = 'multiple'
+						size = '8'
+						class = 'make'>
+					<option val = 'HTML'>HTML</option>
+					<option val = 'CSS'>CSS</option>
+					<option val = 'Javascript'>JavaScript</option>
+					<option val = 'PHP'>PHP</option>
+					<option val = 'C'>C</option>
+					<option val = 'Java'>Java</option>
+					<option val = 'C++'>C++</option>
+					<option val = 'Python'>Python</option>
+				</Select>
+				<button type = 'button'
+						onclick = 'showChoices()'
+						class = 'make'>
+						Submit</button>
+			</fieldset>
+		</form>
+		
+		<div id = 'output'> </div>
+		
+	</body>
+<HTML>
