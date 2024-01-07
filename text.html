@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <title>text.html</title>
+  <meta charset = "UTF-8" />
+  <style type = "text/css">
+    body {
+      background-color: #cccccc;
+    }
+  </style>
+  <script type = "text/javascript">
+    function draw(){
+      //from text.html
+      var drawing = document.getElementById("drawing");
+      var con = drawing.getContext("2d");
+      
+      //clear background
+      con.fillStyle = "white";
+      con.fillRect(0,0, 200, 200);
+
+      // draw font in red
+      con.fillStyle = "red";
+      con.font = "20pt sans-serif";
+      con.fillText("Canvas Rocks!", 5, 100);
+      con.strokeText("Canvas Rocks!", 5, 130);
+
+    } // end draw
+  </script>
+</head>
+
+<body onload = "draw()">
+  <h1>Text</h1>
+  
+  <canvas id = "drawing"
+          height = "200"
+          width = "200">
+    <p>Canvas not supported!</p>
+  </canvas>
+
+</body>
+</html>
